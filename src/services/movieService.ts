@@ -6,7 +6,7 @@ import { Credits } from "../interfaces/credits";
 export async function getMoviesWithCredits(year: string): Promise<MovieWithCredits[]> {
   try {
     // Fetch movie list from the API
-    const movieResponse = await axios.get<{ results: Movie[] }>(`https://api.themoviedb.org/3/discover/movie`, {
+    const movieResponse = await axios.get<{ results: Movie[] }>(`${process.env.BASE_URL}/discover/movie`, {
       headers: {
         Authorization: `Bearer ${process.env.AUTH_TOKEN}`,
       },
@@ -44,7 +44,7 @@ export async function getMoviesWithCredits(year: string): Promise<MovieWithCredi
 // Helper function to fetch credits for a movie
 async function fetchCredits(movieId: number, movieTitle: string): Promise<string[]> {
   try {
-    const creditsResponse = await axios.get<Credits>(`https://api.themoviedb.org/3/movie/${movieId}/credits`, {
+    const creditsResponse = await axios.get<Credits>(`${process.env.BASE_URL}/movie/${movieId}/credits`, {
       headers: {
         Authorization: `Bearer ${process.env.AUTH_TOKEN}`,
       },
