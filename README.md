@@ -37,7 +37,10 @@ To find editors filter for known_for_department and use name property
 Do not commit your bearer token to the repo; use an ignored .env file
 
 ### Example
-
+```
+API URL
+http://localhost:3000/movies/{year}
+```
 For 2019, the response should include the following object
 Note the order of the  editors names does not matter;
 ```
@@ -55,3 +58,14 @@ Note the order of the  editors names does not matter;
 ]
 ```
 Your API should be able to be run and tested by CVS Team with our own bearer token.
+
+## Start the server and Run test case
+```
+// Install the Packages
+npm install
+// Start the Server
+npm start
+// Run Test Cases
+npm test
+```
+
